@@ -21,8 +21,9 @@
 		F88D5F761C821B2700140930 /* HCGBiPadCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F751C821B2700140930 /* HCGBiPadCategoriesViewController.swift */; };
 		F88D5F781C821BA000140930 /* HCGBiPadCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F771C821BA000140930 /* HCGBiPadCategoryCollectionViewCell.swift */; };
 		F88D5F7A1C821BCF00140930 /* HCGBiPadAppsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F791C821BCF00140930 /* HCGBiPadAppsCollectionViewController.swift */; };
-		F88D5F7C1C821BF800140930 /* HCGBiPadAppsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F7B1C821BF800140930 /* HCGBiPadAppsCollectionViewCell.swift */; };
 		F88D5F7E1C821C2000140930 /* HCGBiPadDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F7D1C821C2000140930 /* HCGBiPadDetailsViewController.swift */; };
+		F88D5F821C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F801C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.swift */; };
+		F88D5F831C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F88D5F811C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.xib */; };
 		F8D09C471C812FB20045981C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09C461C812FB20045981C /* AppDelegate.swift */; };
 		F8D09C491C812FB20045981C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09C481C812FB20045981C /* ViewController.swift */; };
 		F8D09C4C1C812FB20045981C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D09C4A1C812FB20045981C /* Main.storyboard */; };
@@ -46,8 +47,9 @@
 		F88D5F751C821B2700140930 /* HCGBiPadCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPadCategoriesViewController.swift; sourceTree = "<group>"; };
 		F88D5F771C821BA000140930 /* HCGBiPadCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPadCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F88D5F791C821BCF00140930 /* HCGBiPadAppsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPadAppsCollectionViewController.swift; sourceTree = "<group>"; };
-		F88D5F7B1C821BF800140930 /* HCGBiPadAppsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPadAppsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F88D5F7D1C821C2000140930 /* HCGBiPadDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPadDetailsViewController.swift; sourceTree = "<group>"; };
+		F88D5F801C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPadAppsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F88D5F811C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HCGBiPadAppsCollectionViewCell.xib; sourceTree = "<group>"; };
 		F8D09C431C812FB20045981C /* grabcatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grabcatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D09C461C812FB20045981C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D09C481C812FB20045981C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,10 +106,18 @@
 				F88D5F751C821B2700140930 /* HCGBiPadCategoriesViewController.swift */,
 				F88D5F771C821BA000140930 /* HCGBiPadCategoryCollectionViewCell.swift */,
 				F88D5F791C821BCF00140930 /* HCGBiPadAppsCollectionViewController.swift */,
-				F88D5F7B1C821BF800140930 /* HCGBiPadAppsCollectionViewCell.swift */,
 				F88D5F7D1C821C2000140930 /* HCGBiPadDetailsViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F88D5F7F1C823C9000140930 /* XiBs */ = {
+			isa = PBXGroup;
+			children = (
+				F88D5F801C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.swift */,
+				F88D5F811C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.xib */,
+			);
+			name = XiBs;
 			sourceTree = "<group>";
 		};
 		F8D09C3A1C812FB10045981C = {
@@ -131,6 +141,7 @@
 		F8D09C451C812FB20045981C /* grabcatalog */ = {
 			isa = PBXGroup;
 			children = (
+				F88D5F7F1C823C9000140930 /* XiBs */,
 				F88D5F681C81FC2700140930 /* Controllers */,
 				F8D09C461C812FB20045981C /* AppDelegate.swift */,
 				F8D09C481C812FB20045981C /* ViewController.swift */,
@@ -206,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D09C511C812FB20045981C /* LaunchScreen.storyboard in Resources */,
+				F88D5F831C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.xib in Resources */,
 				F8D09C4E1C812FB20045981C /* Assets.xcassets in Resources */,
 				F8D09C4C1C812FB20045981C /* Main.storyboard in Resources */,
 				F88D5F5D1C814CCB00140930 /* SBiPad.Storyboard in Resources */,
@@ -271,7 +283,6 @@
 				F8D09C491C812FB20045981C /* ViewController.swift in Sources */,
 				F8D09C471C812FB20045981C /* AppDelegate.swift in Sources */,
 				F88D5F671C81FAD600140930 /* HCGBDismissSegue.swift in Sources */,
-				F88D5F7C1C821BF800140930 /* HCGBiPadAppsCollectionViewCell.swift in Sources */,
 				F88D5F781C821BA000140930 /* HCGBiPadCategoryCollectionViewCell.swift in Sources */,
 				F88D5F741C82150F00140930 /* HCGBiPhoneDetailsViewController.swift in Sources */,
 				F88D5F7A1C821BCF00140930 /* HCGBiPadAppsCollectionViewController.swift in Sources */,
@@ -279,6 +290,7 @@
 				F88D5F721C8214DF00140930 /* HCGBiPhoneAppsTableViewCell.swift in Sources */,
 				F88D5F6C1C81FFA000140930 /* HCGBiPhoneCategoryTableViewCell.swift in Sources */,
 				F88D5F761C821B2700140930 /* HCGBiPadCategoriesViewController.swift in Sources */,
+				F88D5F821C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.swift in Sources */,
 				F88D5F6A1C81FD1C00140930 /* HCGBiPhoneCategoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

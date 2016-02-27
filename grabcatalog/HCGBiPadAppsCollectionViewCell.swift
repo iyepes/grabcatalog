@@ -9,10 +9,12 @@
 import UIKit
 
 class HCGBiPadAppsCollectionViewCell: UICollectionViewCell {
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        
     }
-    
+
 }
