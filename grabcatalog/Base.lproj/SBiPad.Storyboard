@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="JTV-FR-IWr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="oob-fz-Mwq">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Bi Pad Categories View Controller-->
         <scene sceneID="mE3-jO-KX5">
             <objects>
-                <viewController id="JTV-FR-IWr" sceneMemberID="viewController">
+                <viewController id="JTV-FR-IWr" customClass="HCGBiPadCategoriesViewController" customModule="grabcatalog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FZY-pu-ZoR"/>
                         <viewControllerLayoutGuide type="bottom" id="jlC-CG-Dme"/>
@@ -17,8 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ecY-VN-n3W">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ecY-VN-n3W">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yRC-rv-g0s">
                                     <size key="itemSize" width="180" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -26,39 +28,55 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="dsL-SS-aSN">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="dsL-SS-aSN" customClass="HCGBiPadCategoryCollectionViewCell" customModule="grabcatalog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="180" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.98823529409999999" green="0.45098039220000002" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="uQb-YF-Ja4" kind="push" id="xOi-zP-5Lh"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kHU-hv-Llh">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kHU-hv-Llh">
+                                <rect key="frame" x="366" y="493" width="37" height="37"/>
+                                <color key="color" red="0.73725491759999995" green="0.90588241820000004" blue="0.7254902124" alpha="1" colorSpace="deviceRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.98823529409999999" green="0.45098039220000002" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kHU-hv-Llh" firstAttribute="centerY" secondItem="78C-SW-QZi" secondAttribute="centerY" id="CbO-ut-NLZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ecY-VN-n3W" secondAttribute="trailing" constant="-20" id="KV7-aQ-ZCW"/>
+                            <constraint firstItem="jlC-CG-Dme" firstAttribute="top" secondItem="ecY-VN-n3W" secondAttribute="bottom" id="iAc-T0-mDf"/>
+                            <constraint firstItem="kHU-hv-Llh" firstAttribute="centerX" secondItem="78C-SW-QZi" secondAttribute="centerX" id="j0p-YZ-7ks"/>
+                            <constraint firstItem="ecY-VN-n3W" firstAttribute="leading" secondItem="78C-SW-QZi" secondAttribute="leadingMargin" constant="-20" id="nM6-sk-p9W"/>
+                            <constraint firstItem="ecY-VN-n3W" firstAttribute="top" secondItem="FZY-pu-ZoR" secondAttribute="bottom" constant="-64" id="rjN-0f-ACz"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3cp-Br-FqW"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="categoriesCollectionView" destination="ecY-VN-n3W" id="4Fk-nz-8f8"/>
+                        <outlet property="loadingActivityIndicator" destination="kHU-hv-Llh" id="GJP-9t-BCd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9MM-B0-dMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50" y="481"/>
+            <point key="canvasLocation" x="1030" y="481"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Bi Pad Apps Collection View Controller-->
         <scene sceneID="Jm0-5m-8YF">
             <objects>
-                <collectionViewController id="uQb-YF-Ja4" sceneMemberID="viewController">
+                <collectionViewController id="uQb-YF-Ja4" customClass="HCGBiPadAppsCollectionViewController" customModule="grabcatalog" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Ahc-BV-5Od">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v4N-LG-45l">
                             <size key="itemSize" width="180" height="200"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -66,14 +84,15 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AppCell" id="uc9-bE-Ev6">
-                                <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AppCell" id="uc9-bE-Ev6" customClass="HCGBiPadAppsCollectionViewCell" customModule="grabcatalog" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="180" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.45098039220000002" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="Dks-RE-A9p" kind="push" id="CFq-dY-D67"/>
                                 </connections>
@@ -86,17 +105,17 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="wU8-oK-eZG"/>
                     <connections>
-                        <segue destination="JTV-FR-IWr" kind="custom" identifier="CloseApps" customClass="HCGBDismissSegue" id="lxw-Ai-2xq"/>
+                        <segue destination="oob-fz-Mwq" kind="custom" identifier="CloseApps" customClass="HCGBDismissSegue" id="lxw-Ai-2xq"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUj-jN-6UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918" y="481"/>
+            <point key="canvasLocation" x="1898" y="481"/>
         </scene>
-        <!--View Controller-->
+        <!--Bi Pad Details View Controller-->
         <scene sceneID="4Mw-9r-4Up">
             <objects>
-                <viewController id="Dks-RE-A9p" sceneMemberID="viewController">
+                <viewController id="Dks-RE-A9p" customClass="HCGBiPadDetailsViewController" customModule="grabcatalog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eoO-lL-Aat"/>
                         <viewControllerLayoutGuide type="bottom" id="SpC-QX-0Cl"/>
@@ -113,7 +132,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhz-jB-npq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="481"/>
+            <point key="canvasLocation" x="2754" y="481"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zm0-c8-fAx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oob-fz-Mwq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d9P-Py-5s6">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JTV-FR-IWr" kind="relationship" relationship="rootViewController" id="VHA-AN-wF6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kv0-Ev-l91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50" y="481"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

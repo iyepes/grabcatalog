@@ -1,5 +1,5 @@
 //
-//  HCGBiPhoneCategoriesViewController.swift
+//  HCGBiPadCategoriesViewController.swift
 //  grabcatalog
 //
 //  Created by Isabel Yepes on 27/02/16.
@@ -9,9 +9,9 @@
 import UIKit
 import Alamofire
 
-class HCGBiPhoneCategoriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class HCGBiPadCategoriesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
 
-    @IBOutlet weak var categoriesTableView: UITableView!
+    @IBOutlet weak var categoriesCollectionView: UICollectionView!
     
     @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
@@ -22,11 +22,9 @@ class HCGBiPhoneCategoriesViewController: UIViewController, UITableViewDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        categoriesTableView.delegate = self
-        categoriesTableView.dataSource = self
-        loadingActivityIndicator.startAnimating()
+        categoriesCollectionView.delegate = self
+        categoriesCollectionView.dataSource = self
         refresh(self)
     }
 
@@ -46,32 +44,19 @@ class HCGBiPhoneCategoriesViewController: UIViewController, UITableViewDelegate,
         }
     }
     
+    
     // MARK: - Table View Delegate Protocol
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        /*if !collapsedStatus[section] {
-        return listItems.items[section].count
-        } else {
-        return 0
-        }
-        */
-        return 20
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as! HCGBiPhoneCategoryTableViewCell!
-        /*
-        let cellData = HCMFDataInfo(item: listItems.items[indexPath.section][indexPath.row]) as HCMFDataInfo
-        cell.backgroundColor = self.currentParams.appColor
-        cell.cartAddress.text = cellData.street
-        */
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! HCGBiPadCategoryCollectionViewCell
+        //let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
         return cell
     }
     
-
-
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+    
     /*
     // MARK: - Navigation
 
