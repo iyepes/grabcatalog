@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C9856FF648E826778B6F1EA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87839500D98A47BCE7869F /* Pods.framework */; };
+		F88D5F5D1C814CCB00140930 /* SBiPad.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88D5F5B1C814CCB00140930 /* SBiPad.Storyboard */; };
 		F8D09C471C812FB20045981C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09C461C812FB20045981C /* AppDelegate.swift */; };
 		F8D09C491C812FB20045981C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09C481C812FB20045981C /* ViewController.swift */; };
 		F8D09C4C1C812FB20045981C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D09C4A1C812FB20045981C /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		3D4D5553246D73357A2ECBA4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9E331992C8F461A507B69040 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F88D5F5C1C814CCB00140930 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SBiPad.Storyboard; sourceTree = "<group>"; };
 		F8D09C431C812FB20045981C /* grabcatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grabcatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D09C461C812FB20045981C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D09C481C812FB20045981C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				F8D09C4D1C812FB20045981C /* Assets.xcassets */,
 				F8D09C4F1C812FB20045981C /* LaunchScreen.storyboard */,
 				F8D09C521C812FB20045981C /* Info.plist */,
+				F88D5F5B1C814CCB00140930 /* SBiPad.Storyboard */,
 			);
 			path = grabcatalog;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				F8D09C511C812FB20045981C /* LaunchScreen.storyboard in Resources */,
 				F8D09C4E1C812FB20045981C /* Assets.xcassets in Resources */,
 				F8D09C4C1C812FB20045981C /* Main.storyboard in Resources */,
+				F88D5F5D1C814CCB00140930 /* SBiPad.Storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +222,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		F88D5F5B1C814CCB00140930 /* SBiPad.Storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F88D5F5C1C814CCB00140930 /* Base */,
+			);
+			name = SBiPad.Storyboard;
+			sourceTree = "<group>";
+		};
 		F8D09C4A1C812FB20045981C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
