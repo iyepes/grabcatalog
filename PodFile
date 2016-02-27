@@ -1,6 +1,8 @@
 use_frameworks!
 
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.2'
+platform :ios, '8.0'
 workspace 'grabcatalog'
+pod 'Alamofire'
+pod 'AlamofireImage'
 pod 'SwiftyJSON'
