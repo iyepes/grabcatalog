@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class HCGBiPadCategoriesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
 
@@ -40,7 +41,16 @@ class HCGBiPadCategoriesViewController: UIViewController, UICollectionViewDelega
         
         Alamofire.request(.GET, self.requestURL)
             .responseJSON { response in
-                debugPrint(response)
+                //debugPrint(response)
+                switch response.result {
+                case .Success:
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        print("JSON: \(json)")
+                    }
+                case .Failure(let error):
+                    print(error)
+                }
         }
     }
     

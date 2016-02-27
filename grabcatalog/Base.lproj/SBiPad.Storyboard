@@ -100,9 +100,6 @@
                         </cells>
                     </collectionView>
                     <navigationItem key="navigationItem" id="wU8-oK-eZG"/>
-                    <connections>
-                        <segue destination="oob-fz-Mwq" kind="custom" identifier="CloseApps" customClass="HCGBDismissSegue" id="lxw-Ai-2xq"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUj-jN-6UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,9 +119,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="wFE-po-hud"/>
-                    <connections>
-                        <segue destination="uQb-YF-Ja4" kind="custom" identifier="CloseDetails" customClass="HCGBDismissSegue" id="9Sk-AC-eZS"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhz-jB-npq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -149,7 +143,4 @@
             <point key="canvasLocation" x="50" y="481"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="xOi-zP-5Lh"/>
-    </inferredMetricsTieBreakers>
 </document>

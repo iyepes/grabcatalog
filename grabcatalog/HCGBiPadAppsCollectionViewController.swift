@@ -12,8 +12,6 @@ import Alamofire
 private let reuseIdentifier = "AppCell"
 
 class HCGBiPadAppsCollectionViewController: UICollectionViewController {
-
-    //let reuseIdentifier = "AppCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
