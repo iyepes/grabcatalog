@@ -1,5 +1,5 @@
 //
-//  HCGBiPadCategoriesViewController.swift
+//  HCGBiPadAppsViewController.swift
 //  grabcatalog
 //
 //  Created by Isabel Yepes on 27/02/16.
@@ -10,22 +10,22 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class HCGBiPadCategoriesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
+class HCGBiPadAppsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
 
-    @IBOutlet weak var categoriesCollectionView: UICollectionView!
+    @IBOutlet weak var appsCollectionView: UICollectionView!
     
     @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
     let requestURL : String = "https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json"
     
     //Cell reusable ID
-    let cellId = "CategoryCell"
+    let cellId = "AppCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        categoriesCollectionView.delegate = self
-        categoriesCollectionView.dataSource = self
+        appsCollectionView.delegate = self
+        appsCollectionView.dataSource = self
         refresh(self)
     }
 
@@ -53,13 +53,12 @@ class HCGBiPadCategoriesViewController: UIViewController, UICollectionViewDelega
                 }
         }
     }
-    
+
     
     // MARK: - Table View Delegate Protocol
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! HCGBiPadCategoryCollectionViewCell
-        //let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! HCGBiPadAppsCollectionViewCell
         cell.nameLabel.text = "Hello"
         return cell
     }

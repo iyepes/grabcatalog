@@ -34,11 +34,24 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uqv-rM-A04">
+                                                    <rect key="frame" x="18" y="8" width="145" height="144"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrb-ww-zso">
+                                                    <rect key="frame" x="18" y="171" width="145" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.98823529409999999" green="0.45098039220000002" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="uQb-YF-Ja4" kind="push" id="xOi-zP-5Lh"/>
+                                            <outlet property="categoryImageView" destination="Uqv-rM-A04" id="jJG-SI-G2P"/>
+                                            <outlet property="nameLabel" destination="vrb-ww-zso" id="FPZ-d0-inj"/>
+                                            <segue destination="pt0-7u-bfA" kind="push" id="txe-eT-qrx"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -68,42 +81,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9MM-B0-dMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1030" y="481"/>
-        </scene>
-        <!--Bi Pad Apps Collection View Controller-->
-        <scene sceneID="Jm0-5m-8YF">
-            <objects>
-                <collectionViewController id="uQb-YF-Ja4" customClass="HCGBiPadAppsCollectionViewController" customModule="grabcatalog" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Ahc-BV-5Od">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.73725491759999995" green="0.90588241820000004" blue="0.7254902124" alpha="1" colorSpace="deviceRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v4N-LG-45l">
-                            <size key="itemSize" width="180" height="200"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AppCell" id="uc9-bE-Ev6" customClass="HCGBiPadAppsCollectionViewCell" customModule="grabcatalog" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="180" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.45098039220000002" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <segue destination="Dks-RE-A9p" kind="push" id="CFq-dY-D67"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="wU8-oK-eZG"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pUj-jN-6UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1898" y="481"/>
         </scene>
         <!--Bi Pad Details View Controller-->
         <scene sceneID="4Mw-9r-4Up">
@@ -141,6 +118,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kv0-Ev-l91" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="50" y="481"/>
+        </scene>
+        <!--Bi Pad Apps View Controller-->
+        <scene sceneID="Wj4-Lg-Zc3">
+            <objects>
+                <viewController id="pt0-7u-bfA" customClass="HCGBiPadAppsViewController" customModule="grabcatalog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CQC-3L-EtF"/>
+                        <viewControllerLayoutGuide type="bottom" id="ane-rP-8d9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mRK-Oj-6JT">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8a3-IZ-CZH">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4cy-fZ-F9v">
+                                    <size key="itemSize" width="180" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AppCell" id="gwf-kf-pLg" customClass="HCGBiPadAppsCollectionViewCell" customModule="grabcatalog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="180" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efi-H7-h9J">
+                                                    <rect key="frame" x="18" y="8" width="145" height="144"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-WV-EEE">
+                                                    <rect key="frame" x="18" y="171" width="145" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.98823529409999999" green="0.45098039220000002" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="appImageView" destination="efi-H7-h9J" id="vgw-Ql-eN2"/>
+                                            <outlet property="nameLabel" destination="Cmx-WV-EEE" id="0Ly-kh-efj"/>
+                                            <segue destination="Dks-RE-A9p" kind="push" id="ELR-H3-9D2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="R7G-Hc-ks1">
+                                <rect key="frame" x="366" y="493" width="37" height="37"/>
+                                <color key="color" red="0.73725491759999995" green="0.90588241820000004" blue="0.7254902124" alpha="1" colorSpace="deviceRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98823529409999999" green="0.45098039220000002" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="R7G-Hc-ks1" firstAttribute="centerY" secondItem="mRK-Oj-6JT" secondAttribute="centerY" id="3VK-Be-BcD"/>
+                            <constraint firstItem="8a3-IZ-CZH" firstAttribute="top" secondItem="CQC-3L-EtF" secondAttribute="bottom" constant="-64" id="AgY-to-K9j"/>
+                            <constraint firstItem="8a3-IZ-CZH" firstAttribute="leading" secondItem="mRK-Oj-6JT" secondAttribute="leadingMargin" constant="-20" id="d2d-lw-cdN"/>
+                            <constraint firstItem="R7G-Hc-ks1" firstAttribute="centerX" secondItem="mRK-Oj-6JT" secondAttribute="centerX" id="fVf-gQ-BeO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8a3-IZ-CZH" secondAttribute="trailing" constant="-20" id="gj7-Tm-wJW"/>
+                            <constraint firstItem="ane-rP-8d9" firstAttribute="top" secondItem="8a3-IZ-CZH" secondAttribute="bottom" id="mjr-NV-6Z3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="k4H-ms-xCJ"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="appsCollectionView" destination="8a3-IZ-CZH" id="qLS-te-Lao"/>
+                        <outlet property="loadingActivityIndicator" destination="R7G-Hc-ks1" id="D6Z-H6-15G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xao-0p-ZOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1882" y="481"/>
         </scene>
     </scenes>
 </document>
