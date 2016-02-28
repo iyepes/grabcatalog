@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
+
+var userDefaults = NSUserDefaults.standardUserDefaults()
 
 extension UIColor {
     convenience init(hexString:String, alpha:CGFloat) {
@@ -64,5 +67,54 @@ class HCGBGeneralParams: NSObject {
     let textColor:UIColor = UIColor(hexString: "FFFFFF",alpha: 1.0)
     let backgroundColor:UIColor = UIColor(hexString: "07283B",alpha: 1.0)
     let unselectedColor:UIColor = UIColor.lightGrayColor() //AAAAAA
+    
+    //Data
+    var appData : NSDictionary {
+        if let dataDictionary =  userDefaults.dictionaryForKey("dataDictionary") {
+            return dataDictionary
+        } else {
+            let bundle = NSBundle.mainBundle()
+            let path = bundle.pathForResource("data", ofType: "json")
+            let data : NSData = NSData(contentsOfFile: path!)!
+            do {
+                let JSONVar = try NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions(rawValue: 0))
+                guard let JSONDictionary :NSDictionary = JSONVar as? NSDictionary else {
+                    print("Not a Dictionary")
+                    // put in function
+                    return [:]
+                }
+                let json = JSON(data: data)
+                let entries = json["feed","entry"].array
+                var downloadedData : NSMutableDictionary = [:]
+                for (item) in entries! {
+                    let categoryName = item["category","attributes","label"].string
+                    let jsonAppData : NSDictionary =
+                    ["appId":item["id","attributes","im:id"].string!,
+                        "appName":item["im:name","label"].string!,
+                        "appImage":item["im:image",2,"label"].string!,
+                        "appTitle":item["title","label"].string!,
+                        "appSummary":item["summary","label"].string!]
+                    if let categoryCount = downloadedData.valueForKey("\(categoryName!)"+"Count") as? NSNumber {
+                        let newValue = categoryCount.integerValue + 1
+                        downloadedData.setValue(newValue, forKey: "\(categoryName!)"+"Count")
+                        var tempDictionary = downloadedData.valueForKey("\(categoryName!)") as! NSMutableDictionary
+                        tempDictionary.setValue(jsonAppData, forKey: "\(newValue)")
+                        downloadedData.setValue(tempDictionary, forKey: "\(categoryName!)")
+                    } else {
+                        downloadedData.setValue(1, forKey: "\(categoryName!)"+"Count")
+                        let tempDictionary : NSMutableDictionary = [:]
+                        tempDictionary.setValue(jsonAppData, forKey: "1")
+                        downloadedData.setValue(tempDictionary, forKey: "\(categoryName!)")
+                    }
+                }
+                userDefaults.setValue(downloadedData, forKey: "dataDictionary")
+                return downloadedData
+            }
+            catch let JSONError as NSError {
+                print("\(JSONError)")
+                return [:]
+            }
+        }
+    }
     
 }

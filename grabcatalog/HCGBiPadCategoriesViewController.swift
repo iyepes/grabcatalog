@@ -16,6 +16,12 @@ class HCGBiPadCategoriesViewController: UIViewController, UICollectionViewDelega
     
     @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
+    var userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    var appData : NSDictionary = [:]
+    
+    var generalParam : HCGBGeneralParams = HCGBGeneralParams()
+    
     let requestURL : String = "https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json"
     
     //Cell reusable ID
@@ -40,17 +46,51 @@ class HCGBiPadCategoriesViewController: UIViewController, UICollectionViewDelega
     func refresh (sender: AnyObject!) {
         
         Alamofire.request(.GET, self.requestURL)
-            .responseJSON { response in
-                //debugPrint(response)
-                switch response.result {
-                case .Success:
-                    if let value = response.result.value {
-                        let json = JSON(value)
-                        print("JSON: \(json)")
+        .responseJSON { response in
+            //debugPrint(response)
+            if let data : NSData = response.data {
+                do {
+                    let JSONVar = try NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions(rawValue: 0))
+                    guard let JSONDictionary :NSDictionary = JSONVar as? NSDictionary else {
+                        print("Not a Dictionary")
+                        self.appData = self.generalParam.appData
+                        return
                     }
-                case .Failure(let error):
-                    print(error)
+                    let json = JSON(data: data)
+                    let entries = json["feed","entry"].array
+                    var downloadedData : NSMutableDictionary = [:]
+                    for (item) in entries! {
+                        let categoryName = item["category","attributes","label"].string
+                        //print(categoryName)
+                        let jsonAppData : NSDictionary =
+                            ["appId":item["id","attributes","im:id"].string!,
+                            "appName":item["im:name","label"].string!,
+                            "appImage":item["im:image",2,"label"].string!,
+                            "appTitle":item["title","label"].string!,
+                            "appSummary":item["summary","label"].string!]
+                        if let categoryCount = downloadedData.valueForKey("\(categoryName!)"+"Count") as? NSNumber {
+                            let newValue = categoryCount.integerValue + 1
+                            downloadedData.setValue(newValue, forKey: "\(categoryName!)"+"Count")
+                            var tempDictionary = downloadedData.valueForKey("\(categoryName!)") as! NSMutableDictionary
+                            tempDictionary.setValue(jsonAppData, forKey: "\(newValue)")
+                            downloadedData.setValue(tempDictionary, forKey: "\(categoryName!)")
+                        } else {
+                            downloadedData.setValue(1, forKey: "\(categoryName!)"+"Count")
+                            let tempDictionary : NSMutableDictionary = [:]
+                            tempDictionary.setValue(jsonAppData, forKey: "1")
+                            downloadedData.setValue(tempDictionary, forKey: "\(categoryName!)")
+                        }
+                    }
+                    self.userDefaults.setValue(downloadedData, forKey: "dataDictionary")
+                    self.appData = downloadedData
                 }
+                catch let JSONError as NSError {
+                    print("\(JSONError)")
+                    self.appData = self.generalParam.appData
+                }
+            } else {
+                self.appData = self.generalParam.appData
+            }
         }
     }
     

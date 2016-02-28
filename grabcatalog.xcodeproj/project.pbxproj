@@ -24,6 +24,7 @@
 		F88D5F821C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F801C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.swift */; };
 		F88D5F861C825BF600140930 /* HCGBGeneralParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F851C825BF600140930 /* HCGBGeneralParams.swift */; };
 		F88D5F881C825F3400140930 /* HCGBiPadAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F871C825F3400140930 /* HCGBiPadAppsViewController.swift */; };
+		F88D5F8B1C832E4400140930 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = F88D5F8A1C832E4400140930 /* data.json */; };
 		F8D09C471C812FB20045981C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09C461C812FB20045981C /* AppDelegate.swift */; };
 		F8D09C491C812FB20045981C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09C481C812FB20045981C /* ViewController.swift */; };
 		F8D09C4C1C812FB20045981C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D09C4A1C812FB20045981C /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		F88D5F801C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPadAppsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F88D5F851C825BF600140930 /* HCGBGeneralParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBGeneralParams.swift; sourceTree = "<group>"; };
 		F88D5F871C825F3400140930 /* HCGBiPadAppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPadAppsViewController.swift; sourceTree = "<group>"; };
+		F88D5F8A1C832E4400140930 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		F8D09C431C812FB20045981C /* grabcatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grabcatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D09C461C812FB20045981C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D09C481C812FB20045981C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		F88D5F891C832E2F00140930 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F88D5F8A1C832E4400140930 /* data.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		F8D09C3A1C812FB10045981C = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +151,7 @@
 		F8D09C451C812FB20045981C /* grabcatalog */ = {
 			isa = PBXGroup;
 			children = (
+				F88D5F891C832E2F00140930 /* Resources */,
 				F88D5F841C825BC600140930 /* Models */,
 				F88D5F681C81FC2700140930 /* Controllers */,
 				F8D09C461C812FB20045981C /* AppDelegate.swift */,
@@ -219,6 +230,7 @@
 				F8D09C511C812FB20045981C /* LaunchScreen.storyboard in Resources */,
 				F8D09C4E1C812FB20045981C /* Assets.xcassets in Resources */,
 				F8D09C4C1C812FB20045981C /* Main.storyboard in Resources */,
+				F88D5F8B1C832E4400140930 /* data.json in Resources */,
 				F88D5F5D1C814CCB00140930 /* SBiPad.Storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

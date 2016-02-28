@@ -38,20 +38,7 @@ class HCGBiPadAppsViewController: UIViewController, UICollectionViewDelegate, UI
     
     /// Performs the full query then updates the UI
     func refresh (sender: AnyObject!) {
-        
-        Alamofire.request(.GET, self.requestURL)
-            .responseJSON { response in
-                //debugPrint(response)
-                switch response.result {
-                case .Success:
-                    if let value = response.result.value {
-                        let json = JSON(value)
-                        print("JSON: \(json)")
-                    }
-                case .Failure(let error):
-                    print(error)
-                }
-        }
+
     }
 
     
