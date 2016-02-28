@@ -59,11 +59,12 @@ class HCGBiPadCategoriesViewController: UIViewController, UICollectionViewDelega
                     let json = JSON(data: data)
                     let entries = json["feed","entry"].array
                     var downloadedData : NSMutableDictionary = [:]
+                    var numberOfCategories = 0
                     for (item) in entries! {
                         let categoryName = item["category","attributes","label"].string
                         //print(categoryName)
                         let jsonAppData : NSDictionary =
-                            ["appId":item["id","attributes","im:id"].string!,
+                        ["appId":item["id","attributes","im:id"].string!,
                             "appName":item["im:name","label"].string!,
                             "appImage":item["im:image",2,"label"].string!,
                             "appTitle":item["title","label"].string!,
@@ -71,18 +72,31 @@ class HCGBiPadCategoriesViewController: UIViewController, UICollectionViewDelega
                         if let categoryCount = downloadedData.valueForKey("\(categoryName!)"+"Count") as? NSNumber {
                             let newValue = categoryCount.integerValue + 1
                             downloadedData.setValue(newValue, forKey: "\(categoryName!)"+"Count")
-                            var tempDictionary = downloadedData.valueForKey("\(categoryName!)") as! NSMutableDictionary
-                            tempDictionary.setValue(jsonAppData, forKey: "\(newValue)")
-                            downloadedData.setValue(tempDictionary, forKey: "\(categoryName!)")
+                            var categoriesData = downloadedData.valueForKey("\(categoryName!)") as! NSMutableDictionary
+                            categoriesData.setValue(jsonAppData, forKey: "\(newValue)")
+                            downloadedData.setValue(categoriesData, forKey: "\(categoryName!)")
                         } else {
                             downloadedData.setValue(1, forKey: "\(categoryName!)"+"Count")
-                            let tempDictionary : NSMutableDictionary = [:]
-                            tempDictionary.setValue(jsonAppData, forKey: "1")
-                            downloadedData.setValue(tempDictionary, forKey: "\(categoryName!)")
+                            numberOfCategories = numberOfCategories + 1
+                            let categoriesData : NSMutableDictionary = [:]
+                            categoriesData.setValue(jsonAppData, forKey: "1")
+                            downloadedData.setValue(categoriesData, forKey: categoryName!)
+                            if let namesList = downloadedData.valueForKey("namesList")
+                            {
+                                var categoriesDictionary = downloadedData.valueForKey("namesList") as! NSMutableDictionary
+                                categoriesDictionary.setValue(categoryName!, forKey: String(numberOfCategories))
+                                downloadedData.setValue(categoriesDictionary, forKey: "namesList")
+                            } else {
+                                let categoriesDictionary : NSMutableDictionary = [:]
+                                categoriesDictionary.setValue(categoryName!, forKey: String(numberOfCategories))
+                                downloadedData.setValue(categoriesDictionary, forKey: "namesList")
+                            }
                         }
                     }
                     self.userDefaults.setValue(downloadedData, forKey: "dataDictionary")
                     self.appData = downloadedData
+                    self.loadingActivityIndicator.stopAnimating()
+                    self.categoriesCollectionView.reloadData()
                 }
                 catch let JSONError as NSError {
                     print("\(JSONError)")
@@ -99,13 +113,24 @@ class HCGBiPadCategoriesViewController: UIViewController, UICollectionViewDelega
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! HCGBiPadCategoryCollectionViewCell
-        //let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
-        cell.nameLabel.text = "Hello"
-        return cell
+        cell.nameLabel.text = "Categoría"
+        if let namesList = self.appData.valueForKey("namesList") {
+            let resultsDictionary = namesList as! NSDictionary
+            cell.nameLabel.text = resultsDictionary.valueForKey("\(indexPath.row+1)") as? String
+            cell.backgroundColor = self.generalParam.getPalleteColor("\(indexPath.row+1)")
+            return cell
+        } else {
+            return cell
+        }
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        if let namesList = self.appData.valueForKey("namesList") {
+            let resultsDictionary = namesList as! NSDictionary
+            return resultsDictionary.count
+        } else {
+            return 20
+        }
     }
     
     /*

@@ -68,10 +68,42 @@ class HCGBGeneralParams: NSObject {
     let backgroundColor:UIColor = UIColor(hexString: "07283B",alpha: 1.0)
     let unselectedColor:UIColor = UIColor.lightGrayColor() //AAAAAA
     
+    let palette : NSDictionary =
+           ["1":"E8D59E",
+            "2":"9EE8B0",
+            "3":"9EB1E8",
+            "4":"E89ED6",
+            "5":"B8ABEB",
+            "6":"EBABBE",
+            "7":"DEEBAB",
+            "8":"ABEBD8",
+            "9":"E8ED55",
+           "10":"5A55ED",
+           "11":"ED559C",
+           "12":"55EDA6",
+           "13":"46DE28",
+           "14":"C028DE",
+           "15":"28A1DE",
+           "16":"DE6528",
+           "17":"E3B0E8",
+           "18":"E8C7B0",
+           "19":"B5E8B0",
+           "20":"B0D1E8"]
+    
+    
+    func getPalleteColor(colorIndex : String) -> UIColor {
+        if let hexColor : String = palette.valueForKey(colorIndex) as? String {
+            return UIColor(hexString: hexColor,alpha: 1.0)
+        } else {
+            return unselectedColor
+        }
+    }
+    
     //Data
     var appData : NSDictionary {
         if let dataDictionary =  userDefaults.dictionaryForKey("dataDictionary") {
-            return dataDictionary
+            let resultsDictionary = dataDictionary as NSDictionary
+            return resultsDictionary
         } else {
             let bundle = NSBundle.mainBundle()
             let path = bundle.pathForResource("data", ofType: "json")
@@ -86,8 +118,10 @@ class HCGBGeneralParams: NSObject {
                 let json = JSON(data: data)
                 let entries = json["feed","entry"].array
                 var downloadedData : NSMutableDictionary = [:]
+                var numberOfCategories = 0
                 for (item) in entries! {
                     let categoryName = item["category","attributes","label"].string
+                    //print(categoryName)
                     let jsonAppData : NSDictionary =
                     ["appId":item["id","attributes","im:id"].string!,
                         "appName":item["im:name","label"].string!,
@@ -97,14 +131,25 @@ class HCGBGeneralParams: NSObject {
                     if let categoryCount = downloadedData.valueForKey("\(categoryName!)"+"Count") as? NSNumber {
                         let newValue = categoryCount.integerValue + 1
                         downloadedData.setValue(newValue, forKey: "\(categoryName!)"+"Count")
-                        var tempDictionary = downloadedData.valueForKey("\(categoryName!)") as! NSMutableDictionary
-                        tempDictionary.setValue(jsonAppData, forKey: "\(newValue)")
-                        downloadedData.setValue(tempDictionary, forKey: "\(categoryName!)")
+                        var categoriesData = downloadedData.valueForKey("\(categoryName!)") as! NSMutableDictionary
+                        categoriesData.setValue(jsonAppData, forKey: "\(newValue)")
+                        downloadedData.setValue(categoriesData, forKey: "\(categoryName!)")
                     } else {
                         downloadedData.setValue(1, forKey: "\(categoryName!)"+"Count")
-                        let tempDictionary : NSMutableDictionary = [:]
-                        tempDictionary.setValue(jsonAppData, forKey: "1")
-                        downloadedData.setValue(tempDictionary, forKey: "\(categoryName!)")
+                        numberOfCategories = numberOfCategories + 1
+                        let categoriesData : NSMutableDictionary = [:]
+                        categoriesData.setValue(jsonAppData, forKey: "1")
+                        downloadedData.setValue(categoriesData, forKey: categoryName!)
+                        if let namesList = downloadedData.valueForKey("namesList")
+                        {
+                            var categoriesDictionary = downloadedData.valueForKey("namesList") as! NSMutableDictionary
+                            categoriesDictionary.setValue(categoryName!, forKey: String(numberOfCategories))
+                            downloadedData.setValue(categoriesDictionary, forKey: "namesList")
+                        } else {
+                            let categoriesDictionary : NSMutableDictionary = [:]
+                            categoriesDictionary.setValue(categoryName!, forKey: String(numberOfCategories))
+                            downloadedData.setValue(categoriesDictionary, forKey: "namesList")
+                        }
                     }
                 }
                 userDefaults.setValue(downloadedData, forKey: "dataDictionary")
