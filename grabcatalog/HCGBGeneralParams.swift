@@ -61,6 +61,9 @@ extension UIImage {
 
 class HCGBGeneralParams: NSObject {
 
+    //URL source
+    let requestURL : String = "https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json"
+    
     //App appereance
     let appColor:UIColor = UIColor(hexString: "177EB7",alpha: 1.0)
     let selectedColor:UIColor = UIColor(hexString: "07283B",alpha: 1.0)

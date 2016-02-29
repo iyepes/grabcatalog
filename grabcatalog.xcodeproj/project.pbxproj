@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C9856FF648E826778B6F1EA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87839500D98A47BCE7869F /* Pods.framework */; };
+		F81C96DC1C84091D003CE439 /* HCGBiPhoneAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81C96DB1C84091D003CE439 /* HCGBiPhoneAppsViewController.swift */; };
 		F88D5F5D1C814CCB00140930 /* SBiPad.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88D5F5B1C814CCB00140930 /* SBiPad.Storyboard */; };
 		F88D5F611C81F46F00140930 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88D5F601C81F46F00140930 /* SwiftyJSON.framework */; };
 		F88D5F631C81F47600140930 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88D5F621C81F47600140930 /* Alamofire.framework */; };
@@ -15,7 +16,6 @@
 		F88D5F671C81FAD600140930 /* HCGBDismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F661C81FAD600140930 /* HCGBDismissSegue.swift */; };
 		F88D5F6A1C81FD1C00140930 /* HCGBiPhoneCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F691C81FD1C00140930 /* HCGBiPhoneCategoriesViewController.swift */; };
 		F88D5F6C1C81FFA000140930 /* HCGBiPhoneCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F6B1C81FFA000140930 /* HCGBiPhoneCategoryTableViewCell.swift */; };
-		F88D5F6E1C82142C00140930 /* HCGBiPhoneAppsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F6D1C82142C00140930 /* HCGBiPhoneAppsTableViewController.swift */; };
 		F88D5F721C8214DF00140930 /* HCGBiPhoneAppsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F711C8214DF00140930 /* HCGBiPhoneAppsTableViewCell.swift */; };
 		F88D5F741C82150F00140930 /* HCGBiPhoneDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F731C82150F00140930 /* HCGBiPhoneDetailsViewController.swift */; };
 		F88D5F761C821B2700140930 /* HCGBiPadCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D5F751C821B2700140930 /* HCGBiPadCategoriesViewController.swift */; };
@@ -35,6 +35,7 @@
 /* Begin PBXFileReference section */
 		3D4D5553246D73357A2ECBA4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9E331992C8F461A507B69040 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F81C96DB1C84091D003CE439 /* HCGBiPhoneAppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPhoneAppsViewController.swift; sourceTree = "<group>"; };
 		F88D5F5C1C814CCB00140930 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SBiPad.Storyboard; sourceTree = "<group>"; };
 		F88D5F601C81F46F00140930 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		F88D5F621C81F47600140930 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		F88D5F661C81FAD600140930 /* HCGBDismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBDismissSegue.swift; sourceTree = "<group>"; };
 		F88D5F691C81FD1C00140930 /* HCGBiPhoneCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPhoneCategoriesViewController.swift; sourceTree = "<group>"; };
 		F88D5F6B1C81FFA000140930 /* HCGBiPhoneCategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPhoneCategoryTableViewCell.swift; sourceTree = "<group>"; };
-		F88D5F6D1C82142C00140930 /* HCGBiPhoneAppsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPhoneAppsTableViewController.swift; sourceTree = "<group>"; };
 		F88D5F711C8214DF00140930 /* HCGBiPhoneAppsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPhoneAppsTableViewCell.swift; sourceTree = "<group>"; };
 		F88D5F731C82150F00140930 /* HCGBiPhoneDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPhoneDetailsViewController.swift; sourceTree = "<group>"; };
 		F88D5F751C821B2700140930 /* HCGBiPadCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCGBiPadCategoriesViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			children = (
 				F88D5F691C81FD1C00140930 /* HCGBiPhoneCategoriesViewController.swift */,
 				F88D5F6B1C81FFA000140930 /* HCGBiPhoneCategoryTableViewCell.swift */,
-				F88D5F6D1C82142C00140930 /* HCGBiPhoneAppsTableViewController.swift */,
+				F81C96DB1C84091D003CE439 /* HCGBiPhoneAppsViewController.swift */,
 				F88D5F711C8214DF00140930 /* HCGBiPhoneAppsTableViewCell.swift */,
 				F88D5F731C82150F00140930 /* HCGBiPhoneDetailsViewController.swift */,
 				F88D5F751C821B2700140930 /* HCGBiPadCategoriesViewController.swift */,
@@ -290,7 +290,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F88D5F6E1C82142C00140930 /* HCGBiPhoneAppsTableViewController.swift in Sources */,
 				F8D09C491C812FB20045981C /* ViewController.swift in Sources */,
 				F8D09C471C812FB20045981C /* AppDelegate.swift in Sources */,
 				F88D5F671C81FAD600140930 /* HCGBDismissSegue.swift in Sources */,
@@ -304,6 +303,7 @@
 				F88D5F821C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.swift in Sources */,
 				F88D5F861C825BF600140930 /* HCGBGeneralParams.swift in Sources */,
 				F88D5F6A1C81FD1C00140930 /* HCGBiPhoneCategoriesViewController.swift in Sources */,
+				F81C96DC1C84091D003CE439 /* HCGBiPhoneAppsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

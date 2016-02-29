@@ -26,13 +26,14 @@ class HCGBiPadCategoriesViewController: UIViewController, UICollectionViewDelega
     
     var currentColor : UIColor = UIColor.lightGrayColor()
     
-    let requestURL : String = "https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json"
+    var requestURL : String = ""
     
     //Cell reusable ID
     let cellId = "CategoryCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.requestURL = generalParam.requestURL
         // Do any additional setup after loading the view.
         categoriesCollectionView.delegate = self
         categoriesCollectionView.dataSource = self

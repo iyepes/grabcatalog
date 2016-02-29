@@ -37,8 +37,6 @@ class HCGBiPadDetailsViewController: UIViewController {
             appImage.af_setImageWithURL(URL)
             summaryLabel.text = self.currentItem.valueForKey("appSummary") as? String
         }
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

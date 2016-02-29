@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class HCGBiPhoneAppsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var appImageView: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

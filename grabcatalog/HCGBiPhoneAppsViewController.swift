@@ -1,8 +1,8 @@
 //
-//  HCGBiPadAppsViewController.swift
+//  HCGBiPhoneAppsViewController.swift
 //  grabcatalog
 //
-//  Created by Isabel Yepes on 27/02/16.
+//  Created by Isabel Yepes on 29/02/16.
 //  Copyright © 2016 Hacemos Contactos. All rights reserved.
 //
 
@@ -11,9 +11,9 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 
-class HCGBiPadAppsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
+class HCGBiPhoneAppsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
-    @IBOutlet weak var appsCollectionView: UICollectionView!
+    @IBOutlet weak var appsTableView: UITableView!
     
     @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
@@ -31,19 +31,29 @@ class HCGBiPadAppsViewController: UIViewController, UICollectionViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        appsCollectionView.delegate = self
-        appsCollectionView.dataSource = self
+        appsTableView.delegate = self
+        appsTableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table View Delegate Protocol
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! HCGBiPadAppsCollectionViewCell
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let _ = self.currentItem.valueForKey("1") {
+            self.loadingActivityIndicator.stopAnimating()
+            return self.currentItem.count
+        } else {
+            return 20
+        }
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as! HCGBiPhoneAppsTableViewCell!
         if let _ = self.currentItem.valueForKey("\(indexPath.row+1)") {
             self.currentApp = self.currentItem.valueForKey("\(indexPath.row+1)") as! NSDictionary
             cell.nameLabel.text = self.currentApp.valueForKey("appName") as? String
@@ -56,17 +66,8 @@ class HCGBiPadAppsViewController: UIViewController, UICollectionViewDelegate, UI
         cell.backgroundColor = currentColor
         return cell
     }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let _ = self.currentItem.valueForKey("1") {
-            self.loadingActivityIndicator.stopAnimating()
-            return self.currentItem.count
-        } else {
-            return 20
-        }
-    }
-    
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let _ = self.currentItem.valueForKey("\(indexPath.row+1)") {
             self.currentApp = self.currentItem.valueForKey("\(indexPath.row+1)") as! NSDictionary
             performSegueWithIdentifier("OpenDetailsView", sender: self)
@@ -78,7 +79,7 @@ class HCGBiPadAppsViewController: UIViewController, UICollectionViewDelegate, UI
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "OpenDetailsView") {
-            var destinationViewController = segue.destinationViewController as! HCGBiPadDetailsViewController
+            var destinationViewController = segue.destinationViewController as! HCGBiPhoneDetailsViewController
             destinationViewController.currentItem = currentApp
             destinationViewController.currentColor = currentColor
             
