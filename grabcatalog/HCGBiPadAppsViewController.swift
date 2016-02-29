@@ -53,7 +53,11 @@ class HCGBiPadAppsViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        if let _ = self.currentItem.valueForKey("1") {
+            return self.currentItem.count
+        } else {
+            return 20
+        }
     }
     
     /*
