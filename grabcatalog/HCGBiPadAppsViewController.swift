@@ -16,6 +16,8 @@ class HCGBiPadAppsViewController: UIViewController, UICollectionViewDelegate, UI
     
     @IBOutlet weak var loadingActivityIndicator: UIActivityIndicatorView!
     
+    var currentItem: NSDictionary = [:]
+    
     let requestURL : String = "https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json"
     
     //Cell reusable ID

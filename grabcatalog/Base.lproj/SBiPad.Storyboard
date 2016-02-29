@@ -54,7 +54,6 @@
                                         <color key="backgroundColor" red="0.98823529409999999" green="0.45098039220000002" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="vrb-ww-zso" id="FPZ-d0-inj"/>
-                                            <segue destination="pt0-7u-bfA" kind="push" id="txe-eT-qrx"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -79,6 +78,7 @@
                     <connections>
                         <outlet property="categoriesCollectionView" destination="ecY-VN-n3W" id="4Fk-nz-8f8"/>
                         <outlet property="loadingActivityIndicator" destination="kHU-hv-Llh" id="GJP-9t-BCd"/>
+                        <segue destination="pt0-7u-bfA" kind="push" identifier="OpenAppsView" id="3kl-50-d7d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9MM-B0-dMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -167,7 +167,7 @@
                                         <connections>
                                             <outlet property="appImageView" destination="efi-H7-h9J" id="vgw-Ql-eN2"/>
                                             <outlet property="nameLabel" destination="Cmx-WV-EEE" id="0Ly-kh-efj"/>
-                                            <segue destination="Dks-RE-A9p" kind="push" id="ELR-H3-9D2"/>
+                                            <segue destination="Dks-RE-A9p" kind="push" identifier="OpenDetailsView" id="ELR-H3-9D2"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

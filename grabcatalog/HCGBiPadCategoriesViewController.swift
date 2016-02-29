@@ -22,6 +22,8 @@ class HCGBiPadCategoriesViewController: UIViewController, UICollectionViewDelega
     
     var generalParam : HCGBGeneralParams = HCGBGeneralParams()
     
+    var currentItem: NSDictionary = [:]
+    
     let requestURL : String = "https://itunes.apple.com/us/rss/topfreeapplications/limit=20/json"
     
     //Cell reusable ID
@@ -133,14 +135,33 @@ class HCGBiPadCategoriesViewController: UIViewController, UICollectionViewDelega
         }
     }
     
-    /*
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if let namesList = self.appData.valueForKey("namesList") {
+            let resultsDictionary = namesList as! NSDictionary
+            let categoryName = resultsDictionary.valueForKey("\(indexPath.row+1)") as? String
+            let categoriesData = self.appData.valueForKey(categoryName!) as! NSDictionary
+            self.currentItem = categoriesData
+            performSegueWithIdentifier("OpenAppsView", sender: self)
+        }
+        
+        
+        
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "OpenAppsView") {
+            var destinationViewController = segue.destinationViewController as! HCGBiPadAppsViewController
+            destinationViewController.currentItem = currentItem
+            
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
