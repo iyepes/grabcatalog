@@ -16,7 +16,58 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="14018-NPAZW2" translatesAutoresizingMaskIntoConstraints="NO" id="aXy-tD-VRV">
+                                <rect key="frame" x="100" y="145" width="400" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="ZhV-GN-iPQ"/>
+                                    <constraint firstAttribute="height" constant="400" id="gRR-Gj-2gC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaO-4c-7am">
+                                <rect key="frame" x="149" y="460" width="302" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="302" id="k6s-1W-omb"/>
+                                    <constraint firstAttribute="height" constant="85" id="sBC-G5-PEZ"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="By Isabel Yepes For Grability">
+                                        <attributes>
+                                            <color key="NSColor" red="0.16078431900000001" green="0.71764707569999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="36" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pou-qO-vXb">
+                                <rect key="frame" x="180" y="14" width="240" height="147"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="mUZ-Vi-gtf"/>
+                                    <constraint firstAttribute="height" constant="147" id="pug-bv-WNy"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="20 Favorite AppStore selections">
+                                        <attributes>
+                                            <color key="NSColor" red="0.16078431900000001" green="0.71764707569999997" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="36" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89411764709999997" green="0.91372549020000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kaO-4c-7am" firstAttribute="centerX" secondItem="Pou-qO-vXb" secondAttribute="centerX" id="2QU-e2-lbL"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="kaO-4c-7am" secondAttribute="bottom" constant="55" id="Czq-GW-uaJ"/>
+                            <constraint firstItem="aXy-tD-VRV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="45" id="Ej0-tz-QO7"/>
+                            <constraint firstItem="Pou-qO-vXb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="FP9-qV-c7Q"/>
+                            <constraint firstItem="Pou-qO-vXb" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-6" id="K1c-xa-LQo"/>
+                            <constraint firstItem="aXy-tD-VRV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Xan-Fn-rHS"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +75,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="14018-NPAZW2" width="805" height="804"/>
+    </resources>
 </document>
