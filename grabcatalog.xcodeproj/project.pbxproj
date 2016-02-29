@@ -106,8 +106,8 @@
 				F88D5F711C8214DF00140930 /* HCGBiPhoneAppsTableViewCell.swift */,
 				F88D5F731C82150F00140930 /* HCGBiPhoneDetailsViewController.swift */,
 				F88D5F751C821B2700140930 /* HCGBiPadCategoriesViewController.swift */,
-				F88D5F871C825F3400140930 /* HCGBiPadAppsViewController.swift */,
 				F88D5F771C821BA000140930 /* HCGBiPadCategoryCollectionViewCell.swift */,
+				F88D5F871C825F3400140930 /* HCGBiPadAppsViewController.swift */,
 				F88D5F801C823CFB00140930 /* HCGBiPadAppsCollectionViewCell.swift */,
 				F88D5F7D1C821C2000140930 /* HCGBiPadDetailsViewController.swift */,
 			);

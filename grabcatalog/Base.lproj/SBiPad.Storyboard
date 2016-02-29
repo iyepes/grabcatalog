@@ -96,9 +96,50 @@
                     <view key="view" contentMode="scaleToFill" id="DM1-2e-Peq">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBG-BE-SgF">
+                                <rect key="frame" x="20" y="127" width="266" height="40"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Name">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="24" name="HelveticaNeue"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Summary" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="r8L-bD-zrr">
+                                <rect key="frame" x="20" y="379" width="728" height="267"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lu8-pk-8KK">
+                                <rect key="frame" x="20" y="223" width="266" height="91"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Title">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="24" name="HelveticaNeue"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WXW-M2-mTh">
+                                <rect key="frame" x="426" y="122" width="228" height="218"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="wFE-po-hud"/>
+                    <connections>
+                        <outlet property="appImage" destination="WXW-M2-mTh" id="J3V-dn-CHp"/>
+                        <outlet property="nameLabel" destination="rBG-BE-SgF" id="ySc-QI-hzh"/>
+                        <outlet property="summaryLabel" destination="r8L-bD-zrr" id="emS-Mo-Z1o"/>
+                        <outlet property="titleLabel" destination="Lu8-pk-8KK" id="I2c-d5-I8L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhz-jB-npq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,26 +179,33 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4cy-fZ-F9v">
-                                    <size key="itemSize" width="180" height="200"/>
+                                    <size key="itemSize" width="180" height="253"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AppCell" id="gwf-kf-pLg" customClass="HCGBiPadAppsCollectionViewCell" customModule="grabcatalog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="180" height="200"/>
+                                        <rect key="frame" x="0.0" y="64" width="180" height="253"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="253"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efi-H7-h9J">
                                                     <rect key="frame" x="18" y="8" width="145" height="144"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-WV-EEE">
-                                                    <rect key="frame" x="18" y="171" width="145" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-WV-EEE">
+                                                    <rect key="frame" x="18" y="171" width="145" height="66"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.6549019814" green="0.65098041299999998" blue="0.65882354970000001" alpha="1" colorSpace="deviceRGB"/>
+                                                                <font key="NSFont" size="24" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -167,7 +215,6 @@
                                         <connections>
                                             <outlet property="appImageView" destination="efi-H7-h9J" id="vgw-Ql-eN2"/>
                                             <outlet property="nameLabel" destination="Cmx-WV-EEE" id="0Ly-kh-efj"/>
-                                            <segue destination="Dks-RE-A9p" kind="push" identifier="OpenDetailsView" id="ELR-H3-9D2"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -192,6 +239,7 @@
                     <connections>
                         <outlet property="appsCollectionView" destination="8a3-IZ-CZH" id="qLS-te-Lao"/>
                         <outlet property="loadingActivityIndicator" destination="R7G-Hc-ks1" id="D6Z-H6-15G"/>
+                        <segue destination="Dks-RE-A9p" kind="push" identifier="OpenDetailsView" id="8HR-A1-ele"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xao-0p-ZOm" userLabel="First Responder" sceneMemberID="firstResponder"/>

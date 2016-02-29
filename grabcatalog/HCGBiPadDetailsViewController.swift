@@ -7,11 +7,36 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class HCGBiPadDetailsViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var summaryLabel: UITextView!
+    
+    @IBOutlet weak var appImage: UIImageView!
+    
+    var generalParam : HCGBGeneralParams = HCGBGeneralParams()
+    
+    var currentColor : UIColor = UIColor.lightGrayColor()
+    
+    var currentItem: NSDictionary = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = self.currentColor
+        if let _ = self.currentItem.valueForKey("appName") {
+            nameLabel.text = self.currentItem.valueForKey("appName") as? String
+            titleLabel.text = self.currentItem.valueForKey("appTitle") as? String
+            let imageURL = self.currentItem.valueForKey("appImage") as? String
+            let URL = NSURL(string: imageURL!)!
+            appImage.af_setImageWithURL(URL)
+            summaryLabel.text = self.currentItem.valueForKey("appSummary") as? String
+        }
 
         // Do any additional setup after loading the view.
     }
