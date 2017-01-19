@@ -8,7 +8,7 @@ Code example of catalog handling
 
 ## Demo iPhone
 
-![grabcatalog Demo iPhone](https://https://github.com/iyepes/grabcatalog/blob/master/Grability-iPhone-landscape.gif)
+![grabcatalog Demo iPhone](https://github.com/iyepes/grabcatalog/blob/master/Grability-iPhone-landscape.gif)
 
 Icon credits
 
