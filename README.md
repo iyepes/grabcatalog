@@ -2,9 +2,11 @@
 
 Code example of catalog handling
 
-## Demo
+## Demo iPad
 
 ![grabcatalog Demo iPad](https://github.com/iyepes/grabcatalog/blob/master/Grability-iPad.gif)
+
+## Demo iPhone
 
 ![grabcatalog Demo iPhone](https://https://github.com/iyepes/grabcatalog/blob/master/Grability-iPhone-landscape.gif)
 
