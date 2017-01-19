@@ -4,9 +4,9 @@ Code example of catalog handling
 
 ## Demo
 
-![grabcatalog Demo iPad](https://dl.dropboxusercontent.com/u/15652960/github/Grability-iPad.gif)
+![grabcatalog Demo iPad](https://github.com/iyepes/grabcatalog/blob/master/Grability-iPad.gif)
 
-![grabcatalog Demo iPhone](https://dl.dropboxusercontent.com/u/15652960/github/Grability-iPhone-landscape.gif)
+![grabcatalog Demo iPhone](https://https://github.com/iyepes/grabcatalog/blob/master/Grability-iPhone-landscape.gif)
 
 Icon credits
 
